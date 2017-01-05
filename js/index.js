@@ -35,7 +35,7 @@ $("#begin").click(function () {
 // 关于我 跳转到vita
 $("#aboutMe").click(function () {
 	var $iframe = $("#iframe");
-	var vitaUrl = './view/vita/fullPage.html';
+	var vitaUrl = './view/vita/vita.html';
 	$iframe.attr('src', vitaUrl);
 });
 
