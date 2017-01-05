@@ -1,0 +1,38 @@
+/*iframe*/
+iframe {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    border: 0;
+}
+/*居中*/
+.center {
+    width: auto;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*文字居中*/
+.text-center {
+    text-align: center;
+}
+/*登录警告信息*/
+.loginErrorMessage {
+  color: #f03854;
+}
+/*头像*/
+.headPortrait {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+/*注册忘记密码*/
+.registerAndForget {
+  color: #c3c3c3;
+}
+.registerAndForget:hover {
+  color: #000000;
+  text-decoration: none;
+}

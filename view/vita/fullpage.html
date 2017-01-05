@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>fullPage</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+		<link rel="stylesheet" href="./vita.css">
+    <style type="text/css">
+    html {
+    -ms-touch-action: none;  /* 阻止windows Phone 的默认触摸事件 */
+    }
+    body,
+    div,
+    p {
+    	margin: 0;
+    	padding: 0;
+    }
+    ul {
+        list-style: none;
+    }
+    body {
+    	width: 100%;
+        *cursor: default;
+    	overflow: hidden;
+    	font: 16px/1.5 "Microsoft YaHei",Helvetica,STHeiti STXihei,Microsoft JhengHei,Arial;
+    }
+    #pageContain {
+    	overflow: hidden;
+    }
+    .page {
+    	display: none;
+    	width: 100%;
+    	height: 100%;
+    	overflow: hidden;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    }
+    .contain {
+    	width: 100%;
+    	height: 100%;
+    	display: none;
+    	position: relative;
+    	z-index: 0;
+    }
+    .current .contain,.slide .contain {
+    	display: block;
+    }
+    .current {
+    	display: block;
+    	z-index: 1;
+    }
+    .slide {
+    	display: block;
+    	z-index: 2;
+    }
+    .swipe {
+        display: block;
+        z-index: 3;
+        transition-duration: 0ms !important;
+        -webkit-transition-duration: 0ms !important;
+    }
+    .page1 {
+    	background: url(../../picture/0033.jpg);
+    }
+    .page2 {
+    	/*background: #009922;*/
+			background: url(../../picture/0039.jpg);
+    }
+    .page3 {
+    	/*background: #992211;*/
+			background: url(../../picture/0027.jpg);
+
+    }
+    .page4 {
+    	/*background: #ff00ff;*/
+			background: url(../../picture/0038.jpg);
+
+    }
+    .page5 {
+    	/*background: #00ff00;*/
+			background: url(../../picture/0012.jpg);
+
+    }
+    #navBar {
+    	z-index: 3;
+    	position: absolute;
+    	top: 10%;
+    	right: 3%;
+    }
+    #navBar .active {
+        background: #ccc;
+    }
+    #navBar li {
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: all .7s ease;
+        border-radius: 50%;
+        line-height: 40px;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    </style>
+</head>
+<body>
+	<div id="pageContain">
+
+		<div class="page page1 current">
+			<div class="contain">
+				<center>
+					<img src="../../picture/IMG_ME.JPG" class="img-circle" id="head">
+					<div class="section1">
+						<p>在梦想的道路上我们马不停蹄</p>
+						<hr>
+						<p>我叫储旭</P>
+						<p><i class="fa fa-mars fa-fw"></i></P>
+						<p>毕业学校：淮阴工学院</P>
+						<p>前端小鸟</P>
+						<p>s17chucc@163.com</p>
+					</div>
+				</center>
+			</div>
+		</div>
+
+		<div class="page page2">
+			<div class="contain">
+				<center>
+					<div class="bg21">
+						<p>关于我</p>
+					</div>
+					<div class="bg22">
+						<hr>
+					</div>
+					<p style="color:#FF69B4">- ABOUT ME -</p>
+					<div class="bg23">
+						<i class="fa fa-graduation-cap fa-3x" aria-hidden="true"> 学历 | 本科</i>
+						<i class="fa fa-user fa-3x" aria-hidden="true"> 年龄 | 25岁</i>
+						<i class="fa fa-map-marker fa-3x" aria-hidden="true"> &nbsp;方位 | 南京 </i>
+						<i class="fa fa-paperclip fa-3x" aria-hidden="true"> 情况 | 离职</i>
+					</div>
+					<div class="bg24">
+						<br><br>
+						<p>2016年6月毕业于淮阴工学院,目前处于离职状态</p>
+						<p>喜欢优雅又有内涵的事物，有一颗探索的心</p>
+						<p>AngularJS、ThinkPHP、SpringMVC</p>
+						<p>条条大路通罗马，MVC是这个时代伟大的思想之一</p>
+					</div>
+				</center>
+			</div>
+		</div>
+
+		<div class="page page3" >
+			<div class="contain">
+				<center>
+					<div class="bg31">
+						<p>技能评定</p>
+					</div>
+					<div class="bg32">
+						<hr>
+					</div>
+					<p style="color:#FF69B4">- SKILL -</p>
+					<div class="bg33">
+						<p>没有翻不过的山，没有走不完的路</p>
+						<p>前端知识贵在积累，重在贯通，知识的广度和深度都很重要，重中之重是对JavaScript的深度理解</p>
+					</div>
+					<div class="bg34">
+						<p name="pHTML" title="HTML" data-container="body" data-toggle="popover" data-placement="top" data-content="· 深刻理解Web标准<br>· 熟练运用html标签<br>· 熟悉xml标记语言<br>· 掌握html5">HTML</p>
+						<p name="pCSS" title="CSS" data-container="body" data-toggle="popover" data-placement="top" data-content="· 熟练运用css及css3新属性<br>· 注重浏览器兼容性<br>· 掌握bootstrap<br>· 掌握LESS">CSS</p>
+						<p name="pJavaScript" title="JavaScript" data-container="body" data-toggle="popover" data-placement="right" data-content="· 掌握jQuery<br>· 掌握原生JS的编程<br>· 注重面向对象的思想<br>· 仍在不断学习">JavaScript</p>
+						<p name="pAngularJS" title="AngularJS" data-container="body" data-toggle="popover" data-placement="right" data-content="· 熟悉AngularJS的编程思想<br>· 会简单运用<br>· 了解双向绑定的背后原理">AngularJS</p>
+						<p name="pOther" title="Java、PHP、Python" data-container="body" data-toggle="popover" data-placement="bottom" data-content="· 对后端语言都有一定的了解">某些后端语言</p>
+					</div>
+				</center>
+			</div>
+		</div>
+
+		<div class="page page4">
+			<div class="contain">
+				<center>
+					<div class="bg41">
+						<p>我的经历</p>
+					</div>
+					<div class="bg42">
+						<hr>
+					</div>
+					<p style="color:#FF69B4" name="experience">- EXPERIENCE -</p>
+
+					<div class="bg43">
+						<p>这里是轮播图（正在制作）</p>
+					</div>
+					<div class="bg44">
+						<p style="color: 	#BEBEBE">不断的磨练才是成长</p>
+						<p style="color:	#BEBEBE">远处的方向才是动力</p>
+					</div>
+				</center>
+			</div>
+		</div>
+
+		<div class="page page5">
+			<div class="contain">
+				<center>
+					<div class="bg51">
+						<p name="p1">很高兴遇见你</p>
+						<p name="p2">在这复杂的世界里</p>
+						<p name="p3">也许你看到了我</p>
+						<p name="p4">也许你匆匆而行</p>
+						<p name="p5">但我希望</p>
+						<p name="p6">请记住初心</p>
+						<p name="p7">请记住原来的自己</p>
+					</div>
+				</center>
+			</div>
+		</div>
+	</div>
+	<ul id="navBar">
+		<li>0</li>
+		<li>1</li>
+		<li>2</li>
+ 		<li>3</li>
+		<li>4</li>
+	</ul>
+<script src="../../js/jquery.js" charset="utf-8"></script>
+<script type="text/javascript" src="./fullPage.min.js"></script>
+<script type="text/javascript">
+
+var runPage;
+
+runPage = new FullPage({
+
+	id : 'pageContain',                            // id of contain
+	slideTime : 800,                               // time of slide
+	continuous : false,                            // create an infinite feel with no endpoints
+	effect : {                                     // slide effect
+        	transform : {
+        		translate : 'Y',				   // 'X'|'Y'|'XY'|'none'
+        		scale : [.1, 1],				   // [scalefrom, scaleto]
+        		rotate : [0, 0]				       // [rotatefrom, rotateto]
+        	},
+        	opacity : [0, 1]                       // [opacityfrom, opacityto]
+    	},
+	mode : 'wheel,touch,nav:navBar',               // mode of fullpage
+    start : 0,                                     // which page will display when install
+	easing : 'ease'                                // easing('ease','ease-in','ease-in-out' or use cubic-bezier like [.33, 1.81, 1, 1];
+    //  ,onSwipeStart : function(index, thisPage) {   // callback before pageChange
+    //    return 'stop';
+    //  }
+    //  ,beforeChange : function(index, thisPage) {   // callback before pageChange
+    //    return 'stop';
+    //  }
+		,callback: function (index, thisPage) { // callback when pageChange
+			switch (index) {
+			case 0:
+				section1();
+				backsection2();
+				backsection3();
+				backsection4();
+				backsection5();
+				break;
+			case 1:
+				section2();
+				backsection1();
+				backsection3();
+				backsection4();
+				backsection5();
+				break;
+			case 2:
+				section3();
+				backsection1();
+				backsection2();
+				backsection4();
+				backsection5();
+				break;
+			case 3:
+				section4();
+				backsection1();
+				backsection2();
+				backsection3();
+				backsection5();
+				break;
+			case 4:
+				section5();
+				backsection1();
+				backsection2();
+				backsection3();
+				backsection4();
+				break;
+			}
+	}
+});
+  section1();
+// 第一张图（大头贴）
+function section1() {
+	$("#head").animate({
+		"margin-top": "15%"
+	}, 1500, function () {
+		$(".section1").animate({
+			"opacity": 1,
+		}, 2000);
+	});
+}
+
+function backsection1() {
+	$("#head").animate({
+		"margin-top": "40%"
+	}, 100);
+	$(".section1").animate({
+		"opacity": 0,
+	}, 100);
+}
+
+// 第二张图（关于我）
+function section2() {
+	$(".bg22").animate({
+		"width": "200px"
+	}, 2000);
+	$(".bg23").animate({
+		"opacity": "0.9"
+	}, 2000);
+	$(".bg24").animate({
+		"height": "300px"
+	}, 2000);
+}
+
+function backsection2() {
+	$(".bg22").animate({
+		"width": "0"
+	}, 100);
+	$(".bg23").animate({
+		"opacity": "0"
+	}, 100);
+	$(".bg24").animate({
+		"height": "0"
+	}, 100);
+}
+
+// 第三张图(我的技能)
+function section3() {
+	$(".bg32").animate({
+		"width": "200px"
+	}, 2000);
+	$("p[name='pHTML']").animate({
+		"opacity": 1
+	}, 1000, function () {
+		$("p[name='pCSS']").animate({
+			"opacity": 1
+		}, 1000, function () {
+			$("p[name='pJavaScript']").animate({
+				"opacity": 1
+			}, 1000, function () {
+				$("p[name='pAngularJS']").animate({
+					"opacity": 1
+				}, 1000, function () {
+					$("p[name='pOther']").animate({
+						"opacity": 1
+					}, 1000);
+				});
+			});
+		});
+	});
+}
+
+function backsection3() {
+	$(".bg32").animate({
+		"width": "0"
+	}, 200);
+}
+// bootstrap的pop
+$(function () {
+	$("[data-toggle='popover']").popover({
+		html: true,
+		animation: true,
+		trigger: 'hover',
+		delay: {
+			show: 200,
+			hide: 100
+		}
+	});
+});
+
+// 第四张图（我的经历）
+function section4() {
+	$(".bg42 hr").animate({
+		"width": "200px"
+	}, 2000);
+}
+
+function backsection4() {
+	$(".bg42 hr").animate({
+		"width": "0"
+	}, 200);
+}
+// 第五张图（很高兴遇见你）
+function section5() {
+	$("p[name='p1']").animate({
+		"opacity": "1"
+	}, 2000, function () {
+		$("p[name='p2']").animate({
+			"opacity": "1"
+		}, 2000, function () {
+			$("p[name='p3']").animate({
+				"opacity": "1"
+			}, 2000, function () {
+				$("p[name='p4']").animate({
+					"opacity": "1"
+				}, 2000, function () {
+					$("p[name='p5']").animate({
+						"opacity": "1"
+					}, 2000, function () {
+						$("p[name='p6']").animate({
+							"opacity": "1"
+						}, 2000, function () {
+							$("p[name='p7']").animate({
+								"opacity": "1"
+							}, 2000, function () {
+								$(".bg51 p").animate({
+									"opacity": "0",
+								}, 2000);
+							});
+						});
+					});
+				});
+			});
+		});
+	});
+}
+
+function backsection5() {
+	$(".51 p").css('opacity', '0');
+}
+</script>
+</body>
+</html>
