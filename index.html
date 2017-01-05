@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="小小师门站">
+    <meta name="author" content="梁音">
+    <title>闲杂人等请围观</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/full-slider.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css" media="screen" title="common">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- 适配手机Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+          <a class="navbar-brand" href="#/homePage" id="begin">起源</a>
+        </div>
+        <!-- nav按钮 -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" id="nav1" data-toggle="modal" data-target="#login-modal">尘埃</a>
+            </li>
+            <li>
+              <a href="#" id="nav2" data-toggle="modal" data-target="#beginO">新生</a>
+            </li>
+            <li>
+              <a href="#" id="nav3" data-toggle="modal" data-target="#beginO">梦幻</a>
+            </li>
+            <li>
+              <a href="#/AboutMe" id="aboutMe" data-toggle="modal">关于我</a>
+            </li>
+          </ul>
+          <!-- 头像框 -->
+          <img src="./picture/first.jpg" class="img-circle headPortrait pull-right" id="headPortrait">
+          <!-- 播放器控件 -->
+          <ul class="nav navbar-nav" style="float:right;" id="musicButton">
+            <li>
+              <audio id="music" loop="loop">你的浏览器不支持audio标签</audio>
+              <a href="javascript:void(0);" onclick="playPause()" style="display:none;">
+                <span class="glyphicon glyphicon-play"></span>
+              </a>
+              <a href="javascript:void(0);" onclick="playPause()" style="display:inline-block;">
+                <span class="glyphicon glyphicon-pause"></span>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+
+    <!-- 框架加载 -->
+    <iframe src="./view/homePage/homePage.html" id="iframe"></iframe>
+    <!-- /.container -->
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="beginO" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">还在建设中哟</h4>
+          </div>
+          <div class="modal-body">
+            <center><img src="picture/404.jpg" alt="404" /></center>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal -->
+    </div>
+
+    <!-- ****************************************************************************************************** -->
+    <!-- 登录模态框（login） -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <center>
+              <h4 class="modal-title" id="loginModalTitle">我们的征途是星辰大海！</h4><i class="fa fa-spinner fa-spin" style="display:none" id="loginModalTitleI"></i>
+            </center>
+          </div>
+
+          <div class="modal-body">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user-circle fa-fw"></i></span>
+              <input type="text" name="username" placeholder="username" class="form-control" id="username">
+              <!-- <label for="username"></label> -->
+            </div>
+
+            <center><span id="loginErrorMessage" class="loginErrorMessage">&nbsp;</span></center>
+
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+              <input type="password" name="password" placeholder="password" class="form-control" id="password">
+              <!-- <label for="password"></label> -->
+            </div>
+            <br>
+            <center>
+              <div>
+                <a href="javascript:void(0);" id="forgetPassword" class="registerAndForget">忘记密码？</a>
+                <a href="javascript:void(0);" id="newUser" class="registerAndForget" data-toggle="modal" data-target="#register-modal">小鲜肉？</a>
+              </div>
+            </center>
+          </div>
+
+          <div class="modal-footer center">
+            <button type="button" class="btn btn-info" id="login">登录</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          </div>
+
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal -->
+    </div>
+
+
+    <!-- 注册模态框 -->
+    <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <!-- 头 -->
+            <center>
+              <h4 class="modal-title" id="loginModalTitle">快来加入我们吧！</h4><i class="fa fa-spinner fa-spin" style="display:none" id="loginModalTitleI"></i>
+            </center>
+          </div>
+
+          <div class="modal-body">
+            <!-- 注册用户名 -->
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user-circle fa-fw"></i></span>
+              <input type="text" name="usernameRegister" placeholder="username" class="form-control" id="usernameRegister">
+            </div>
+
+            <center><span id="usernameRegisterErrorMessage" class="loginErrorMessage">&nbsp;</span></center>
+            <!-- 注册密码 -->
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+              <input type="password" name="passwordRegister" placeholder="password" class="form-control" id="passwordRegister">
+            </div>
+            <center><span id="passwordRegisterErrorMessage" class="loginErrorMessage">&nbsp;</span></center>
+
+            <!-- 确认注册密码 -->
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+              <input type="password" name="passwordRegisterConfirm" placeholder="confirm password" class="form-control" id="passwordRegisterConfirm">
+            </div>
+            <center><span id="passwordRegisterConfirmErrorMessage" class="loginErrorMessage">&nbsp;</span></center>
+
+            <!-- 注册邮箱 -->
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+              <input type="text" name="emailRegister" placeholder="email" class="form-control" id="emailRegister">
+            </div>
+            <center><span id="emailRegisterErrorMessage" class="loginErrorMessage">&nbsp;</span></center>
+
+            <!-- 注册昵称 -->
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-drupal fa-fw"></i></span>
+              <input type="text" name="nameRegister" placeholder="name" class="form-control" id="nameRegister">
+            </div>
+            <center><span id="nameRegisterErrorMessage" class="loginErrorMessage">&nbsp;</span></center>
+
+            <!-- 注册性别 -->
+            <center>
+              <div class="radio-inline">
+                <label>
+                  <input type="radio" name="sexRegrist" id="male"
+                     value="male" checked><i class="fa fa-mars fa-fw"></i>
+               </label>
+              </div>
+              <div class="radio-inline">
+                <label>
+                  <input type="radio" name="sexRegrist" id="female"
+                     value="female"><i class="fa fa-venus fa-fw"></i>
+               </label>
+              </div>
+              <div class="radio-inline">
+                <label>
+                  <input type="radio" name="sexRegrist" id="maleAndFemale"
+                     value="maleAndFemale"><i class="fa fa-transgender fa-fw"></i>
+               </label>
+              </div>
+            </center>
+          </div>
+
+          <div class="modal-footer center">
+            <button type="button" class="btn btn-info" id="register">注册</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          </div>
+
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal -->
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Script to Activate the Carousel -->
+    <script src="js/index.js"></script>
+  </body>
+
+
+
+</html>
