@@ -1,0 +1,41 @@
+/*欢迎*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.welcome {
+    line-height: 150px;
+    font-size: 30px;
+}
+
+
+/*签名高度*/
+
+.signature {
+    height: 50px;
+}
+
+
+/*签名设置*/
+
+#signature {
+    border: 0px;
+    text-align: center;
+    resize: none;
+}
+
+
+/*昵称边框*/
+
+#name {
+    line-height: 35px;
+    border: 0px;
+    width: 200px;
+    text-align: center;
+}
+
+.more {
+    padding: 30px;
+}

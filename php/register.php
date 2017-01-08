@@ -27,7 +27,7 @@ $resultUsernameRegister = mysql_query($searchUsernameRegister);
 
 // 注册用判断
 if (!mysql_num_rows($resultUsernameRegister)) {
-    $insertUserInfomation = "INSERT INTO login (username,password,name,email,sex) VALUES ('{$usernameRegister}','{$passwordRegister}','{$emailRegister}','{$nameRegister}','{$sexRegister}')";
+    $insertUserInfomation = "INSERT INTO login (username,password,name,email,sex) VALUES ('{$usernameRegister}','{$passwordRegister}','{$nameRegister}','{$emailRegister}','{$sexRegister}')";
     // 插入用户数据
     mysql_query($insertUserInfomation);
     echo 'finish';
@@ -35,3 +35,5 @@ if (!mysql_num_rows($resultUsernameRegister)) {
     // 返回已存在该用户
     echo 'exist';
 }
+
+mysql_close($link);

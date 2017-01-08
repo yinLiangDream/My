@@ -35,3 +35,4 @@ if (!mysql_num_rows($resultUsername)) {
         }
     }
 }
+mysql_close($link);
