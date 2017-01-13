@@ -32,6 +32,14 @@ $("#begin").click(function () {
 	beginIframe.iframeTo(homePageUrl);
 });
 
+// 新生 跳转到newLife
+$("#nav2").click(function () {
+	var newLifeUrl = './view/newLife/newLife.html';
+	var beginIframe = new UserOperation();
+	beginIframe.iframeTo(newLifeUrl);
+});
+
+
 // 关于我 跳转到vita
 $("#aboutMe").click(function () {
 	var vitaUrl = './view/vita/vita.html';
