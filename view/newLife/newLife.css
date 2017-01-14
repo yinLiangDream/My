@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px;
+}
+
+.box {
+    margin-bottom: 20px;
+    float: left;
+    width: 220px;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+.box img {
+    max-width: 100%;
+}
+
+.boxIn {
+    text-align: center;
+    color: #aaa;
+    background: rgba(220, 220, 220, 0.8);
+    margin-top: -5px;
+    width: 100%;
+    line-height: 40px;
+}
+
+.gigante {
+    width: 100%;
+    text-align: center;
+}
