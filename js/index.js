@@ -28,23 +28,20 @@ function playPause() {
 // 起源回归主页
 $("#begin").click(function () {
 	var homePageUrl = './view/homePage/homePage.html';
-	var beginIframe = new UserOperation();
-	beginIframe.iframeTo(homePageUrl);
+	UserOperation().iframeTo(homePageUrl);
 });
 
 // 新生 跳转到newLife
 $("#nav2").click(function () {
 	var newLifeUrl = './view/newLife/newLife.html';
-	var beginIframe = new UserOperation();
-	beginIframe.iframeTo(newLifeUrl);
+	UserOperation().iframeTo(newLifeUrl);
 });
 
 
 // 关于我 跳转到vita
 $("#aboutMe").click(function () {
 	var vitaUrl = './view/vita/vita.html';
-	var beginIframe = new UserOperation();
-	beginIframe.iframeTo(vitaUrl);
+	UserOperation().iframeTo(vitaUrl);
 });
 
 // 模态框禁止自动关闭
@@ -63,27 +60,24 @@ $(function () {
 
 // login判断
 $(function () {
-	var loginAction = new UserOperation();
 	$('#login').click(function () {
 		var $username = $('#username').val();
 		var $password = $('#password').val();
-		loginAction.login($username, $password);
+		UserOperation().login($username, $password);
 	});
 });
 
 // 忘记密码
 $(function () {
 	$("#forgetPassword").click(function () {
-		var forgetPasswordAction = new UserOperation();
-		forgetPasswordAction.forgetPassword();
+		UserOperation().forgetPassword();
 	});
 });
 
 // 新注册
 $(function () {
 	$("#newUser").click(function () {
-		var newUser = new UserOperation();
-		newUser.newUser();
+		UserOperation().newUser();
 	});
 });
 
@@ -91,33 +85,27 @@ $(function () {
 $(function () {
 	// 用户名注册检验
 	$usernameRegister.blur(function () {
-		var usernameRegister = new UserOperation();
-		usernameRegister.usernameRegisterBlur();
+		UserOperation().usernameRegisterBlur();
 	});
 	// 密码检验
 	$passwordRegister.blur(function () {
-		var passwordRegister = new UserOperation();
-		passwordRegister.passwordRegisterBlur();
+		UserOperation().passwordRegisterBlur();
 	});
 	// 密码确认检验
 	$passwordRegisterConfirm.blur(function () {
-		var passwordRegisterConfirm = new UserOperation();
-		passwordRegisterConfirm.passwordRegisterConfirmBlur();
+		UserOperation().passwordRegisterConfirmBlur();
 	});
 	// 邮箱验证
 	$emailRegister.blur(function () {
-		var emailRegister = new UserOperation();
-		emailRegister.emailRegisterBlur();
+		UserOperation().emailRegisterBlur();
 	});
 	// 昵称验证
 	$nameRegister.blur(function () {
-		var nameRegister = new UserOperation();
-		nameRegister.nameRegisterBlur();
+		UserOperation().nameRegisterBlur();
 	});
 	// 注册按钮
 	$register.click(function () {
-		var register = new UserOperation();
-		register.register();
+		UserOperation().register();
 	});
 });
 
@@ -138,8 +126,7 @@ $(function () {
 var userCenterUrl = './view/userCenter/userCenter.html';
 $headPortrait.click(function () {
 	if ($.cookie('flag') === 'true') {
-		var headPortraitIframe = new UserOperation();
-		headPortraitIframe.iframeTo(userCenterUrl);
+		UserOperation().iframeTo(userCenterUrl);
 	} else {
 		alert('请先登录！');
 	}
@@ -149,8 +136,7 @@ $headPortrait.click(function () {
 $nav1.click(function () {
 	if ($.cookie('flag') === 'true') {
 		$('#nav1').attr('data-target', '');
-		var nav1Iframe = new UserOperation();
-		nav1Iframe.iframeTo(userCenterUrl);
+		UserOperation().iframeTo(userCenterUrl);
 	} else {
 		$('#nav1').attr('data-target', '#login-modal');
 	}
