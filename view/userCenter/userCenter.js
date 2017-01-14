@@ -32,19 +32,26 @@ $(function () {
 
 // dom操作
 // 修改邮箱
+$email = $('#email');
 $(function () {
-	$email = $('#email');
 	$('#updateEmail').click(function () {
 		$email.removeAttr('readonly');
 	});
 	$email.blur(function () {
-		$email.attr('readonly', 'true');
+		var emailRegex = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+		if (emailRegex.exec($email.val())) {
+			$email.attr('readonly', 'true');
+		} else {
+			alert('邮箱格式不正确~');
+		}
 	});
 });
 
 // 修改属性
 $(function () {
-
+	$('#male').click(function () {
+		alert($(this).val());
+	});
 });
 
 // 退出登录
